@@ -1,162 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600&display=swap');
 
-/* reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* whole page */
-/* typography */
+/* Base */
+html, body { min-height: 100vh; }
 body {
-  font-family: 'Nunito', sans-serif;
-  font-size: 32px;
-  background-color: #000;
-  color: #fff;
-  min-height: 100vh;
-
   display: flex;
   flex-direction: column;
+  background: #000;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
 }
+h1, h2, nav a { font-family: 'Fredoka', sans-serif; letter-spacing: 0.5px; }
 
-h1, h2, nav a {
-  font-family: 'Fredoka', sans-serif;
-  letter-spacing: 0.5px;
-}
-
-/* ===== header/nav bar at the top ===== */
+/* Header / Nav */
 .site-header {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 10;
   background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.55));
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255,255,255,0.12);
-
-  width: 100%;
-  background-color: #000;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-
-  /* stick to the top if the page ever scrolls */
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  z-index: 10;
 }
-
-/* inner nav row */
 .site-nav {
-  width: 100%;
-  padding: 0.75rem 1rem;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 1rem;
-  row-gap: 0.75rem;
+  width: 100%; padding: 0.75rem 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  column-gap: 1rem; row-gap: 0.75rem;
 }
+.site-nav-left, .site-nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.site-nav-left { flex-shrink: 0; }
+.site-nav-right { flex-wrap: wrap; }
 
-.site-nav-left {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.site-nav-right {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-left: auto;
-}
-
-
-
-/* each nav item is a link that wraps a video */
-.nav-btn-link {
-  display: inline-block;
-  text-decoration: none;
-  line-height: 0;
-  border-radius: 12px;
-
-  /* subtle glow/border */
-  box-shadow: 0 20px 40px rgba(255, 232, 74, 0.0);
-  transition: transform 0.1s ease;
-  border: 1px solid rgba(255, 232, 74, 0.2);
-  background-color: rgba(255, 232, 74, 0.05);
-}
-
+/* Nav links — old style restored (lift + soft bg + shadow) */
+a, button { -webkit-tap-highlight-color: transparent; }
 .nav-text-link {
   display: inline-block;
   text-decoration: none;
   color: #fff;
   font-weight: 600;
   font-size: 1.05rem;
+  line-height: 1;
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
-  line-height: 1;
-  transition: transform 120ms ease, background-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+  background: transparent;
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease, color 120ms ease;
 }
-
-
-/* hover effect */
 .nav-text-link:hover {
-  background-color: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.08);
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
-
-.nav-text-link:focus-visible {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.28);
+.nav-text-link:active {
+  transform: none;
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.30);
 }
+.nav-text-link:focus { outline: none; }
+.nav-text-link:focus-visible { box-shadow: 0 0 0 3px rgba(255,255,255,0.28); }
+.nav-text-link.active { background: rgba(255,255,255,0.12); }
 
-.nav-text-link.active {
-  background-color: rgba(255,255,255,0.12);
-}
-
-
-/* the video itself inside the nav bar */
-.nav-btn-video {
-  display: block;
-  width: 100px;
-  max-width: 40vw;
-  height: 30px;
-  border-radius: 12px;
-}
-
-/* ===== main content area below header ===== */
-main.page-body {
-  flex: 1;
-  display: flex;
-}
-
-/* this centers whatever is on the page (logo / coming soon) */
+/* Main */
+main.page-body { flex: 1; display: flex; }
 .center-column {
-  margin: auto;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  margin: auto; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
 }
-
-/* the big lemonsauce logo video on the home page */
-.main-logo-video {
-  width: 600px;
-  max-width: 90vw;
-  height: auto;
-  display: block;
+.main-logo-video, .coming-soon-video {
+  width: 600px; height: auto; display: block;
 }
+.main-logo-video { max-width: 90vw; }
+.coming-soon-video { max-width: 80vw; }
 
-/* coming soon video used on subpages */
-.coming-soon-video {
-  width: 600px;
-  max-width: 80vw;
-  height: auto;
-  display: block;
-}
+/* Legacy (kept if referenced) */
+.nav-btn-video { display: block; width: 100px; max-width: 40vw; height: 30px; border-radius: 12px; }
