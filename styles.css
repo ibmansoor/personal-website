@@ -65,7 +65,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 main.page-body { flex: 1; display: flex; }
 .center-column {
   margin: auto; text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
 }
 .main-logo-video, .coming-soon-video {
   width: 600px; height: auto; display: block;
@@ -101,3 +101,16 @@ main.page-body { flex: 1; display: flex; }
   background: rgba(255, 255, 255, 0.12);
   box-shadow: none;
 }
+
+/* Short line above the logo */
+.intro-tag {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.5rem);
+  opacity: 0.9;
+  letter-spacing: 0.2px;
+  text-align: center;
+  margin-top: 0.25rem;
+  margin-bottom: -0.25rem; /* brings logo a bit closer */
+}
+
