@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 
 /* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,3 +75,29 @@ main.page-body { flex: 1; display: flex; }
 
 /* Legacy (kept if referenced) */
 .nav-btn-video { display: block; width: 100px; max-width: 40vw; height: 30px; border-radius: 12px; }
+
+
+/* Social links under the logo — vertical stack, larger */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 600px;
+  max-width: 90vw;
+}
+
+.social-links .nav-text-link {
+  font-family: 'Nunito', sans-serif;   
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 10px;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.social-links .nav-text-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
