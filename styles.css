@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600&display=swap');
+
 /* reset */
 * {
   box-sizing: border-box;
@@ -6,8 +8,10 @@
 }
 
 /* whole page */
+/* typography */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
   background-color: #000;
   color: #fff;
   min-height: 100vh;
@@ -16,8 +20,18 @@ body {
   flex-direction: column;
 }
 
+h1, h2, nav a {
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 0.5px;
+}
+
 /* ===== header/nav bar at the top ===== */
 .site-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.55));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+
   width: 100%;
   background-color: #000;
   border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -33,18 +47,35 @@ body {
 
 /* inner nav row */
 .site-nav {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
   padding: 0.75rem 1rem;
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
 }
 
-/* each nav item is a link that wraps a gif */
+.site-nav-left {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.site-nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+
+
+/* each nav item is a link that wraps a video */
 .nav-btn-link {
   display: inline-block;
   text-decoration: none;
@@ -58,28 +89,52 @@ body {
   background-color: rgba(255, 232, 74, 0.05);
 }
 
-/* hover effect */
-.nav-btn-link:hover {
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 0px 15px rgba(255, 230, 0, 0.3);
+.nav-text-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  line-height: 1;
+  transition: transform 120ms ease, background-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
 }
 
-/* the gif itself inside the nav bar */
-.nav-btn-gif {
+
+/* hover effect */
+.nav-text-link:hover {
+  background-color: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.nav-text-link:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.28);
+}
+
+.nav-text-link.active {
+  background-color: rgba(255,255,255,0.12);
+}
+
+
+/* the video itself inside the nav bar */
+.nav-btn-video {
   display: block;
-  width: 160px;       /* slightly smaller in header */
+  width: 100px;
   max-width: 40vw;
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
+  height: 30px;
+  border-radius: 12px;
 }
 
 /* ===== main content area below header ===== */
 main.page-body {
-  flex: 1; /* take up remaining height under header */
+  flex: 1;
   display: flex;
 }
 
-/* this centers whatever is on the page (logo or coming soon) */
+/* this centers whatever is on the page (logo / coming soon) */
 .center-column {
   margin: auto;
   text-align: center;
@@ -87,21 +142,21 @@ main.page-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;    /* space between stacked elements on pages that have more than one item */
+  gap: 2rem;
 }
 
-/* the big lemonsauce logo gif on the home page */
-.main-logo-gif {
+/* the big lemonsauce logo video on the home page */
+.main-logo-video {
   width: 600px;
   max-width: 90vw;
   height: auto;
-  image-rendering: -webkit-optimize-contrast;
+  display: block;
 }
 
-/* coming soon gif used on subpages */
-.coming-soon-gif {
+/* coming soon video used on subpages */
+.coming-soon-video {
   width: 600px;
   max-width: 80vw;
   height: auto;
-  image-rendering: -webkit-optimize-contrast;
+  display: block;
 }

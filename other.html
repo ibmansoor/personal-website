@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other</title>
+  <title>Other • LEMONSAUCE</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="center-column">
-    <img
-      src="animations/coming_soon.gif"
-      alt="Coming Soon"
-      class="coming-soon-gif"
-    />
+
+  <header class="site-header">
+    <nav class="site-nav">
+
+      <div class="site-nav-left">
+        <a href="index.html" class="nav-text-link">Home</a>
+      </div>
+
+
+      <div class="site-nav-right">
+        <a href="about.html" class="nav-text-link">About Me</a>
+        <a href="gamedev.html" class="nav-text-link">Game Dev</a>
+        <a href="programming.html" class="nav-text-link">Programming Projects</a>
+        <a href="other.html" class="nav-text-link active">Other</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="page-body">
+    <div class="center-column">
+      <video class="coming-soon-video" autoplay loop muted playsinline preload="auto">
+        <source src="animations/coming_soon.webm" type="video/webm" />
+        <source src="animations/coming_soon.mp4" type="video/mp4" />
+      </video>
+    </div>
   </main>
+
 </body>
 </html>

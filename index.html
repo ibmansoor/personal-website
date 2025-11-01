@@ -12,29 +12,16 @@
   <header class="site-header">
     <nav class="site-nav">
 
-      <a href="about.html" class="nav-btn-link">
-        <img src="animations/about.gif"
-             alt="about me"
-             class="nav-btn-gif" />
-      </a>
+      <div class="site-nav-left">
+        <a href="index.html" class="nav-text-link active">Home</a>
+      </div>
 
-      <a href="gamedev.html" class="nav-btn-link">
-        <img src="animations/gamedev.gif"
-             alt="game dev projects"
-             class="nav-btn-gif" />
-      </a>
-
-      <a href="programming.html" class="nav-btn-link">
-        <img src="animations/programming.gif"
-             alt="programming projects"
-             class="nav-btn-gif" />
-      </a>
-
-      <a href="other.html" class="nav-btn-link">
-        <img src="animations/other.gif"
-             alt="other"
-             class="nav-btn-gif" />
-      </a>
+      <div class="site-nav-right">
+        <a href="about.html" class="nav-text-link">About Me</a>
+        <a href="gamedev.html" class="nav-text-link">Game Dev</a>
+        <a href="programming.html" class="nav-text-link">Programming Projects</a>
+        <a href="other.html" class="nav-text-link">Other</a>
+      </div>
 
     </nav>
   </header>
@@ -42,9 +29,10 @@
   <!-- Page body content -->
   <main class="page-body">
     <div class="center-column">
-      <img src="animations/lemonsauce_logo.gif"
-           alt="lemonsauce"
-           class="main-logo-gif" />
+      <video class="main-logo-video" autoplay loop muted playsinline preload="auto">
+        <source src="animations/lemonsauce_logo.webm" type="video/webm" />
+        <source src="animations/lemonsauce_logo.mp4" type="video/mp4" />
+      </video>
     </div>
   </main>
 
