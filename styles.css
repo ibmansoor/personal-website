@@ -1,26 +1,107 @@
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* whole page */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, sans-serif;
   background-color: #000;
   color: #fff;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== header/nav bar at the top ===== */
+.site-header {
+  width: 100%;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  /* stick to the top if the page ever scrolls */
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 10;
+}
+
+/* inner nav row */
+.site-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* each nav item is a link that wraps a gif */
+.nav-btn-link {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 0;
+  border-radius: 12px;
+
+  /* subtle glow/border */
+  box-shadow: 0 20px 40px rgba(255, 232, 74, 0.0);
+  transition: transform 0.1s ease;
+  border: 1px solid rgba(255, 232, 74, 0.2);
+  background-color: rgba(255, 232, 74, 0.05);
+}
+
+/* hover effect */
+.nav-btn-link:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 0px 15px rgba(255, 230, 0, 0.3);
+}
+
+/* the gif itself inside the nav bar */
+.nav-btn-gif {
+  display: block;
+  width: 160px;       /* slightly smaller in header */
+  max-width: 40vw;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ===== main content area below header ===== */
+main.page-body {
+  flex: 1; /* take up remaining height under header */
   display: flex;
 }
 
-/* center the content vertically & horizontally */
-.center {
+/* this centers whatever is on the page (logo or coming soon) */
+.center-column {
   margin: auto;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;    /* space between stacked elements on pages that have more than one item */
 }
 
-/* the name text */
-.name-gif {
+/* the big lemonsauce logo gif on the home page */
+.main-logo-gif {
   width: 600px;
+  max-width: 90vw;
   height: auto;
-  image-rendering: -webkit-optimize-contrast; /* keeps text crisp */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* coming soon gif used on subpages */
+.coming-soon-gif {
+  width: 600px;
+  max-width: 80vw;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
 }
